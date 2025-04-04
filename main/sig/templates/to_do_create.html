@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block tittle %}
+   Create To-Do
+{% endblock %}
+{% block header %}
+   Create To-Do
+{% endblock %}
+{% block content %}
+    <a href="/list"><button>Back to Home </button></a>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="save"
+        > 
+    </form>
+{% endblock %}

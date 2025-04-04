@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block tittle %}
+   Uptade To-Do
+{% endblock %}
+{% block header %}
+  Uptade To-Do
+{% endblock %}
+{% block content %}
+    <a href="/list"><button>Back to Home </button></a>
+
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Uptade"
+        > 
+    </form>
+{% endblock %}

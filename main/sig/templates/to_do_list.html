@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block tittle %}
+    To-Do list
+{% endblock %}
+{% block header %}
+    To-Do list
+{% endblock %}
+{% block content %}
+    <ul>
+        {% for to_do in  todos %}
+        <li><a href="detail/{{ to_do.id}}">{{to_do.task_name}}</a> </li>
+        <p>{{ to_do.task_start }}</p>
+        <li>Entre para saber data de vencimento ou, se necessário, altere a data</li>
+        {% endfor %}
+    </ul>
+    <a href="create/"><button>Create a To-Do</button></a>
+{% endblock %}

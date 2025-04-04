@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <h1>Você tem certeza que quer deletar ? "{{ object.titlle }}"?</h1>
+        
+        <button type="submit" onclick="return confirm('Você tem certeza que deseja deletar este item?');">Deletar</button>
+
+        
+        <h3><a href="{% url 'to_do_list' %}">Cancelar</a></h3>
+
+    </form>
+</div>
+{% endblock %}

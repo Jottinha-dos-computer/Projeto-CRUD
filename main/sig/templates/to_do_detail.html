@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block tittle %}
+   {{ object.task_name }}
+{% endblock %}
+{% block header %}
+    {{ object.task_name }}
+{% endblock %}
+{% block content %}
+    <a href="/list"><button>Back to Home</button></a>
+    <p>Start Date:{{ object.task_start}}</p>
+    <p>Ende/due Date:{{ object.task_end}}</p>
+    <a href="/uptade/{{ object.id}}"><button>Uptade</button></a>
+    <a href="/delete/{{ object.id}}"><button>Delete</button></a>
+{% endblock %}
+
