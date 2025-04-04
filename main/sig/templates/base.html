@@ -8,12 +8,30 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+
     <h1>
         {% block header %}
+        Título da Página
         {% endblock %}
     </h1>
-    {%block content%}
-    
-    {% endblock %}
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tarefas</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    {% block content %}
+                    Conteúdo da Tabela
+                    {% endblock %}
+                </td>
+            </tr>
+        
+    </table>
+
 </body>
 </html>
