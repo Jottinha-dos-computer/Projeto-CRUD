@@ -19,7 +19,7 @@
         <thead>
             <tr>
                 <th>Tarefas</th>
-                
+                <th>Usuário</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +28,13 @@
                     {% block content %}
                     Conteúdo da Tabela
                     {% endblock %}
+                </td>
+                <td>
+                    {% if user.is_authenticated %}
+                        {{ user.username }} 
+                    {% else %}
+                        Usuário não autenticado
+                    {% endif %}
                 </td>
             </tr>
         

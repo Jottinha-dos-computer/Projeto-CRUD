@@ -1,1 +1,15 @@
 SIG
+.pydevproject*
+.project*
+*.mo
+*.pyc
+.~
+.*/migrations/
+*.[pyc]
+*/migrations/
+komodoprojetct
+pycache
+*idea/
+*pydevproject
+*.project
+.*/mypy_cache/

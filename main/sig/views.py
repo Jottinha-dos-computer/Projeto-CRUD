@@ -10,6 +10,10 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 
+from django.shortcuts import render
+
+def minha_view(request):
+    return render(request, 'base.html', {'usuario': request.user.username})
 
 @login_required
 def list_view(request):
