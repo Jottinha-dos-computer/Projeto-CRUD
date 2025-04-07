@@ -26,7 +26,7 @@
         <thead>
             <tr>
                 <th>Tarefas</th>
-                <th>Usuário</th>
+                <th>Usuário {% if user.is_authenticated %} - {{ user.username }} {% else %} (Não autenticado) {% endif %}</th>
             </tr>
         </thead>
         <tbody>
@@ -35,13 +35,6 @@
                     {% block content %}
                     Conteúdo da Tabela
                     {% endblock %}
-                </td>
-                <td>
-                    {% if user.is_authenticated %}
-                        {{ user.username }} 
-                    {% else %}
-                        Usuário não autenticado
-                    {% endif %}
                 </td>
             </tr>
         </tbody>
