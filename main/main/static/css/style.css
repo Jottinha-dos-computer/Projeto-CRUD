@@ -32,6 +32,8 @@ td{
     cursor: pointer; 
     transition: background-color 0.3s, transform 0.3s; 
 }
+
+/* base1 */
 main {
     display: flex;
     justify-content: center;
