@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,18 +15,24 @@
         {% endblock %}
     </h1>
 
-    {% if user.is_authenticated %}
-        <form action="{% url 'logout' %}" method="post">
-            {% csrf_token %}
-            <button type="submit" class="logout-btn">Sair</button>
-        </form>
-    {% endif %}
-
     <table>
         <thead>
             <tr>
                 <th>Tarefas</th>
-                <th>Usuário {% if user.is_authenticated %} - {{ user.username }} {% else %} (Não autenticado) {% endif %}</th>
+                <th>
+                    <div class="user-header">
+                        <span>Usuário: </span>
+                        {% if user.is_authenticated %}
+                            <span class="username">{{ user.username }}</span>
+                            <form action="{% url 'logout' %}" method="post" class="logout-form">
+                                {% csrf_token %}
+                                <button type="submit" class="logout-btn">Sair</button>
+                            </form>
+                        {% else %}
+                            <span>(Não autenticado)</span>
+                        {% endif %}
+                    </div>
+                </th>
             </tr>
         </thead>
         <tbody>
